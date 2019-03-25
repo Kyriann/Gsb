@@ -18,8 +18,8 @@ namespace Gsb
     {
         private MySqlConnection connection;
         private string login;
-       
-        
+
+
 
         public VoirRapportVisiteVisiteur(string log)
         {
@@ -38,13 +38,16 @@ namespace Gsb
 
         private void VoirRapportVisiteVisiteur_Load(object sender, EventArgs e)
         {
-                
+            date_debutDate.Hide();
+            date_finDate.Hide();
+            date_finDate.Value = DateTime.Now.AddDays(1);
+
             t_visiteur.Enabled = false;
             l_nom.Hide();
             l_prenom.Hide();
             l_numVisiteur.Hide();
 
-            
+
 
 
 
@@ -62,43 +65,43 @@ namespace Gsb
             connection.Close();
 
 
-                char[] splitters = new char[] { ' ' };
-                string[] laCase = t_visiteur.Text.Split(splitters);
-                l_nom.Text = (laCase[0]);
-                l_prenom.Text = (laCase[1]);
-
-               
-
-                connection.Open();
-                MySqlCommand SelectCommand2 = new MySqlCommand("select col_matricule from collaborateur where col_nom=" + "'" + laCase[0] + "'" + ";", connection);
-                MySqlDataReader myReader2;
-                myReader2 = SelectCommand2.ExecuteReader();
-                while (myReader2.Read())
-                {
-                    l_numVisiteur.Text = myReader2.GetString(0);
-                    
-                    
-                }
-                connection.Close();
-          
-                connection.Open();
-                MySqlCommand SelectCommand3 = new MySqlCommand("select rap_num from rapport_visite where col_matricule=" + "'" + l_numVisiteur.Text + "'" + ";", connection);
-                MySqlDataReader myReader3;
-                myReader3 = SelectCommand3.ExecuteReader();
-                while (myReader3.Read())
-                {
-                    c_numRapport.Items.Add(myReader3[0]);
-                }
-
-                connection.Close();
-            
-
-         
-                
+            char[] splitters = new char[] { ' ' };
+            string[] laCase = t_visiteur.Text.Split(splitters);
+            l_nom.Text = (laCase[0]);
+            l_prenom.Text = (laCase[1]);
 
 
 
-            
+            connection.Open();
+            MySqlCommand SelectCommand2 = new MySqlCommand("select col_matricule from collaborateur where col_nom=" + "'" + laCase[0] + "'" + ";", connection);
+            MySqlDataReader myReader2;
+            myReader2 = SelectCommand2.ExecuteReader();
+            while (myReader2.Read())
+            {
+                l_numVisiteur.Text = myReader2.GetString(0);
+
+
+            }
+            connection.Close();
+
+            connection.Open();
+            MySqlCommand SelectCommand3 = new MySqlCommand("select rap_num from rapport_visite where col_matricule=" + "'" + l_numVisiteur.Text + "'" + ";", connection);
+            MySqlDataReader myReader3;
+            myReader3 = SelectCommand3.ExecuteReader();
+            while (myReader3.Read())
+            {
+                c_numRapport.Items.Add(myReader3[0]);
+            }
+
+            connection.Close();
+
+
+
+
+
+
+
+
 
         }
 
@@ -158,7 +161,7 @@ namespace Gsb
 
         private void b_details_Click(object sender, EventArgs e)
         {
-            
+
             if (l_nomPrenomPraticien.Text != "")
             {
                 string nomprafin;
@@ -176,19 +179,185 @@ namespace Gsb
 
         private void b_retour_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Selection S3 = new Selection(login,"","visiteur");
+            Selection S3 = new Selection(login, "", "visiteur");
             S3.Show();
             this.Hide();
         }
 
         private void b_supprimer_Click(object sender, EventArgs e)
         {
-            
+
+        }
+        private void check_entre2Dates_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            if (check_entre2Dates.Checked)
+            {
+                
+                date_debutDate.Show();
+                date_finDate.Show();
+
+                c_numRapport.Items.Clear();
+
+                e_detailsPraticien.Clear();
+
+
+                l_motif.Text = "";
+                l_bilan.Text = "";
+
+                l_date.Text = "";
+                l_nomPrenomPraticien.Text = "";
+
+                if (this.dataGridView1.DataSource != null)
+                {
+                    this.dataGridView1.DataSource = null;
+                }
+                else
+                {
+                    this.dataGridView1.Rows.Clear();
+                }
+
+            }
+            else
+            {
+                date_debutDate.Hide();
+                date_finDate.Hide();
+
+                e_detailsPraticien.Clear();
+
+
+                l_motif.Text = "";
+                l_bilan.Text = "";
+
+                c_numRapport.Items.Clear();
+
+                l_date.Text = "";
+                l_nomPrenomPraticien.Text = "";
+
+                if (this.dataGridView1.DataSource != null)
+                {
+                    this.dataGridView1.DataSource = null;
+                }
+                else
+                {
+                    this.dataGridView1.Rows.Clear();
+                }
+
+
+                try
+                {
+                    connection.Open();
+                    MySqlCommand SelectCommand = new MySqlCommand("select rap_num from rapport_visite where col_matricule=" + "'" + l_numVisiteur.Text + "'" + ";", connection);
+
+                    MySqlDataReader myReader;
+
+                    myReader = SelectCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+
+                        c_numRapport.Items.Add(myReader[0]);
+                    }
+                    connection.Close();
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+        private void date_finDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (date_finDate.Value < date_debutDate.Value)
+            {
+                date_finDate.Value = DateTime.Now;
+                MessageBox.Show("La deuxième date ne peut pas avant la première date");
+            }
+            else
+            {
+                try
+                {
+
+                    string date_debutstr, date_finstr;
+                    date_debutstr = date_debutDate.Value.ToString("yyyy-MM-dd");
+                    date_finstr = date_finDate.Value.ToString("yyyy-MM-dd");
+                    connection.Open();
+                    MySqlCommand SelectCommand = new MySqlCommand("select rap_num from rapport_visite where RAP_DATE BETWEEN" + "'" + date_debutstr + "'" + " AND " + "'" + date_finstr + "'" + "AND col_matricule=" + "'" + l_numVisiteur.Text + "'" + ";", connection);
+
+                    MySqlDataReader myReader;
+
+                    myReader = SelectCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        c_numRapport.Items.Add(myReader[0]);
+                    }
+                    connection.Close();
+
+
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+        private void date_debutDate_ValueChanged(object sender, EventArgs e)
+        {
+
+
+            if (date_debutDate.Value > date_finDate.Value)
+            {
+                date_debutDate.Value = DateTime.Now;
+                MessageBox.Show("La première date ne peut pas après la deuxiéme date");
+            }
+            else
+            {
+                try
+                {
+
+                    string date_debutstr, date_finstr;
+                    date_debutstr = date_debutDate.Value.ToString("yyyy-MM-dd");
+                    date_finstr = date_finDate.Value.ToString("yyyy-MM-dd");
+                    connection.Open();
+                    MySqlCommand SelectCommand = new MySqlCommand("select rap_num from rapport_visite where RAP_DATE BETWEEN" + "'" + date_debutstr + "'" + " AND " + "'" + date_finstr + "'" + "AND col_matricule=" +"'"+l_numVisiteur.Text+"'"+ ";", connection);
+
+                    MySqlDataReader myReader;
+
+                    myReader = SelectCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        c_numRapport.Items.Add(myReader[0]);
+                    }
+                    connection.Close();
+
+
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
+

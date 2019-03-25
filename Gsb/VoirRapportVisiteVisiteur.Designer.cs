@@ -48,6 +48,9 @@
             this.l_nomPrenomPraticien = new System.Windows.Forms.Label();
             this.t_visiteur = new System.Windows.Forms.TextBox();
             this.b_retour = new System.Windows.Forms.Button();
+            this.check_entre2Dates = new System.Windows.Forms.CheckBox();
+            this.date_debutDate = new System.Windows.Forms.DateTimePicker();
+            this.date_finDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +67,7 @@
             // numerorapport
             // 
             this.numerorapport.AutoSize = true;
-            this.numerorapport.Location = new System.Drawing.Point(74, 136);
+            this.numerorapport.Location = new System.Drawing.Point(74, 185);
             this.numerorapport.Name = "numerorapport";
             this.numerorapport.Size = new System.Drawing.Size(95, 13);
             this.numerorapport.TabIndex = 6;
@@ -74,7 +77,7 @@
             // 
             this.c_numRapport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.c_numRapport.FormattingEnabled = true;
-            this.c_numRapport.Location = new System.Drawing.Point(193, 128);
+            this.c_numRapport.Location = new System.Drawing.Point(193, 177);
             this.c_numRapport.Name = "c_numRapport";
             this.c_numRapport.Size = new System.Drawing.Size(150, 21);
             this.c_numRapport.TabIndex = 7;
@@ -83,7 +86,7 @@
             // praticienVisite
             // 
             this.praticienVisite.AutoSize = true;
-            this.praticienVisite.Location = new System.Drawing.Point(74, 182);
+            this.praticienVisite.Location = new System.Drawing.Point(74, 231);
             this.praticienVisite.Name = "praticienVisite";
             this.praticienVisite.Size = new System.Drawing.Size(76, 13);
             this.praticienVisite.TabIndex = 8;
@@ -92,7 +95,7 @@
             // motif
             // 
             this.motif.AutoSize = true;
-            this.motif.Location = new System.Drawing.Point(74, 259);
+            this.motif.Location = new System.Drawing.Point(74, 308);
             this.motif.Name = "motif";
             this.motif.Size = new System.Drawing.Size(36, 13);
             this.motif.TabIndex = 9;
@@ -156,7 +159,7 @@
             // l_motif
             // 
             this.l_motif.AutoSize = true;
-            this.l_motif.Location = new System.Drawing.Point(150, 259);
+            this.l_motif.Location = new System.Drawing.Point(150, 308);
             this.l_motif.Name = "l_motif";
             this.l_motif.Size = new System.Drawing.Size(0, 13);
             this.l_motif.TabIndex = 23;
@@ -188,14 +191,14 @@
             // l_nomPrenomPraticien
             // 
             this.l_nomPrenomPraticien.AutoSize = true;
-            this.l_nomPrenomPraticien.Location = new System.Drawing.Point(190, 182);
+            this.l_nomPrenomPraticien.Location = new System.Drawing.Point(190, 231);
             this.l_nomPrenomPraticien.Name = "l_nomPrenomPraticien";
             this.l_nomPrenomPraticien.Size = new System.Drawing.Size(0, 13);
             this.l_nomPrenomPraticien.TabIndex = 27;
             // 
             // t_visiteur
             // 
-            this.t_visiteur.Location = new System.Drawing.Point(193, 57);
+            this.t_visiteur.Location = new System.Drawing.Point(183, 57);
             this.t_visiteur.Name = "t_visiteur";
             this.t_visiteur.Size = new System.Drawing.Size(150, 20);
             this.t_visiteur.TabIndex = 28;
@@ -210,9 +213,39 @@
             this.b_retour.UseVisualStyleBackColor = true;
             this.b_retour.Click += new System.EventHandler(this.button1_Click);
             // 
+            // check_entre2Dates
+            // 
+            this.check_entre2Dates.AutoSize = true;
+            this.check_entre2Dates.Location = new System.Drawing.Point(226, 92);
+            this.check_entre2Dates.Name = "check_entre2Dates";
+            this.check_entre2Dates.Size = new System.Drawing.Size(150, 17);
+            this.check_entre2Dates.TabIndex = 30;
+            this.check_entre2Dates.Text = "Entre deux dates données";
+            this.check_entre2Dates.UseVisualStyleBackColor = true;
+            this.check_entre2Dates.CheckedChanged += new System.EventHandler(this.check_entre2Dates_CheckedChanged);
+            // 
+            // date_debutDate
+            // 
+            this.date_debutDate.Location = new System.Drawing.Point(12, 125);
+            this.date_debutDate.Name = "date_debutDate";
+            this.date_debutDate.Size = new System.Drawing.Size(200, 20);
+            this.date_debutDate.TabIndex = 31;
+            this.date_debutDate.ValueChanged += new System.EventHandler(this.date_debutDate_ValueChanged);
+            // 
+            // date_finDate
+            // 
+            this.date_finDate.Location = new System.Drawing.Point(255, 125);
+            this.date_finDate.Name = "date_finDate";
+            this.date_finDate.Size = new System.Drawing.Size(200, 20);
+            this.date_finDate.TabIndex = 32;
+            this.date_finDate.ValueChanged += new System.EventHandler(this.date_finDate_ValueChanged);
+            // 
             // VoirRapportVisiteVisiteur
             // 
             this.ClientSize = new System.Drawing.Size(823, 467);
+            this.Controls.Add(this.date_finDate);
+            this.Controls.Add(this.date_debutDate);
+            this.Controls.Add(this.check_entre2Dates);
             this.Controls.Add(this.b_retour);
             this.Controls.Add(this.t_visiteur);
             this.Controls.Add(this.l_nomPrenomPraticien);
@@ -262,5 +295,8 @@
         private System.Windows.Forms.Label l_nomPrenomPraticien;
         private System.Windows.Forms.TextBox t_visiteur;
         private System.Windows.Forms.Button b_retour;
+        private System.Windows.Forms.DateTimePicker date_finDate;
+        private System.Windows.Forms.DateTimePicker date_debutDate;
+        private System.Windows.Forms.CheckBox check_entre2Dates;
     }
 }
