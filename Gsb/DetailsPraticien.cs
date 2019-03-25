@@ -32,7 +32,7 @@ namespace Gsb
         }
     private void DetailsPraticien_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("yikes");
             
 
             char[] splitters = new char[] { ' ' };
