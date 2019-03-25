@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Gsb
+{
+    public partial class Selection : Form
+    {
+        private string login;
+        private string motDepasse;
+        private string natuser;
+
+
+        
+
+        public Selection(string log, string mdp, string natUser)
+        {
+            InitializeComponent();
+            login = log;
+            motDepasse = mdp;
+            l_showusername.Text = login;
+            natuser = natUser;
+        }
+
+        
+
+        private void créerUnRapportToolStripMenuItem_Click(object sender, EventArgs e)
+        {           
+            this.Hide();
+            RapportVisite nouveauRapport = new RapportVisite(/*login, motDepasse*/);
+            nouveauRapport.ShowDialog();
+            this.Close();
+        }
+
+        private void l_showusername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void voirRapportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (natuser == "visiteur")
+            {
+                this.Hide();
+                VoirRapportVisiteVisiteur voirRapportV = new VoirRapportVisiteVisiteur(login);
+                voirRapportV.ShowDialog();
+                this.Close();
+            }
+            else if (natuser == "responsable" || natuser=="admin") 
+            {
+                this.Hide();
+                VoirRapportVisite voirRapport = new VoirRapportVisite(login,natuser);
+                voirRapport.ShowDialog();
+                this.Close();
+            }
+
+            
+        }
+
+        private void Selection_Load(object sender, EventArgs e)
+        {
+            
+            
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}
