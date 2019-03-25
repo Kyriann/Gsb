@@ -58,7 +58,7 @@
             // 
             // b_details
             // 
-            this.b_details.Location = new System.Drawing.Point(511, 214);
+            this.b_details.Location = new System.Drawing.Point(517, 216);
             this.b_details.Name = "b_details";
             this.b_details.Size = new System.Drawing.Size(123, 23);
             this.b_details.TabIndex = 0;
@@ -70,7 +70,7 @@
             // 
             this.c_numRapport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.c_numRapport.FormattingEnabled = true;
-            this.c_numRapport.Location = new System.Drawing.Point(146, 186);
+            this.c_numRapport.Location = new System.Drawing.Point(152, 188);
             this.c_numRapport.Name = "c_numRapport";
             this.c_numRapport.Size = new System.Drawing.Size(205, 21);
             this.c_numRapport.TabIndex = 2;
@@ -79,7 +79,7 @@
             // visiteur
             // 
             this.visiteur.AutoSize = true;
-            this.visiteur.Location = new System.Drawing.Point(41, 70);
+            this.visiteur.Location = new System.Drawing.Point(47, 72);
             this.visiteur.Name = "visiteur";
             this.visiteur.Size = new System.Drawing.Size(41, 13);
             this.visiteur.TabIndex = 3;
@@ -88,7 +88,7 @@
             // numerorapport
             // 
             this.numerorapport.AutoSize = true;
-            this.numerorapport.Location = new System.Drawing.Point(33, 186);
+            this.numerorapport.Location = new System.Drawing.Point(39, 188);
             this.numerorapport.Name = "numerorapport";
             this.numerorapport.Size = new System.Drawing.Size(95, 13);
             this.numerorapport.TabIndex = 4;
@@ -97,7 +97,7 @@
             // praticienVisite
             // 
             this.praticienVisite.AutoSize = true;
-            this.praticienVisite.Location = new System.Drawing.Point(33, 224);
+            this.praticienVisite.Location = new System.Drawing.Point(74, 252);
             this.praticienVisite.Name = "praticienVisite";
             this.praticienVisite.Size = new System.Drawing.Size(76, 13);
             this.praticienVisite.TabIndex = 5;
@@ -106,7 +106,7 @@
             // l_nomPrenomPraticien
             // 
             this.l_nomPrenomPraticien.AutoSize = true;
-            this.l_nomPrenomPraticien.Location = new System.Drawing.Point(143, 224);
+            this.l_nomPrenomPraticien.Location = new System.Drawing.Point(184, 252);
             this.l_nomPrenomPraticien.Name = "l_nomPrenomPraticien";
             this.l_nomPrenomPraticien.Size = new System.Drawing.Size(0, 13);
             this.l_nomPrenomPraticien.TabIndex = 6;
@@ -114,7 +114,7 @@
             // motif
             // 
             this.motif.AutoSize = true;
-            this.motif.Location = new System.Drawing.Point(33, 316);
+            this.motif.Location = new System.Drawing.Point(74, 344);
             this.motif.Name = "motif";
             this.motif.Size = new System.Drawing.Size(36, 13);
             this.motif.TabIndex = 7;
@@ -123,7 +123,7 @@
             // l_motif
             // 
             this.l_motif.AutoSize = true;
-            this.l_motif.Location = new System.Drawing.Point(143, 316);
+            this.l_motif.Location = new System.Drawing.Point(184, 344);
             this.l_motif.Name = "l_motif";
             this.l_motif.Size = new System.Drawing.Size(0, 13);
             this.l_motif.TabIndex = 8;
@@ -131,7 +131,7 @@
             // l_numVisiteur
             // 
             this.l_numVisiteur.AutoSize = true;
-            this.l_numVisiteur.Location = new System.Drawing.Point(470, 65);
+            this.l_numVisiteur.Location = new System.Drawing.Point(476, 67);
             this.l_numVisiteur.Name = "l_numVisiteur";
             this.l_numVisiteur.Size = new System.Drawing.Size(0, 13);
             this.l_numVisiteur.TabIndex = 9;
@@ -139,7 +139,7 @@
             // l_nom
             // 
             this.l_nom.AutoSize = true;
-            this.l_nom.Location = new System.Drawing.Point(550, 65);
+            this.l_nom.Location = new System.Drawing.Point(556, 67);
             this.l_nom.Name = "l_nom";
             this.l_nom.Size = new System.Drawing.Size(0, 13);
             this.l_nom.TabIndex = 10;
@@ -148,7 +148,7 @@
             // l_prenom
             // 
             this.l_prenom.AutoSize = true;
-            this.l_prenom.Location = new System.Drawing.Point(629, 65);
+            this.l_prenom.Location = new System.Drawing.Point(635, 67);
             this.l_prenom.Name = "l_prenom";
             this.l_prenom.Size = new System.Drawing.Size(0, 13);
             this.l_prenom.TabIndex = 11;
@@ -156,7 +156,7 @@
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(511, 157);
+            this.date.Location = new System.Drawing.Point(517, 159);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(36, 13);
             this.date.TabIndex = 12;
@@ -165,7 +165,7 @@
             // l_date
             // 
             this.l_date.AutoSize = true;
-            this.l_date.Location = new System.Drawing.Point(591, 157);
+            this.l_date.Location = new System.Drawing.Point(597, 159);
             this.l_date.Name = "l_date";
             this.l_date.Size = new System.Drawing.Size(0, 13);
             this.l_date.TabIndex = 13;
@@ -173,7 +173,7 @@
             // bilan
             // 
             this.bilan.AutoSize = true;
-            this.bilan.Location = new System.Drawing.Point(508, 316);
+            this.bilan.Location = new System.Drawing.Point(514, 318);
             this.bilan.Name = "bilan";
             this.bilan.Size = new System.Drawing.Size(36, 13);
             this.bilan.TabIndex = 14;
@@ -181,7 +181,7 @@
             // 
             // l_bilan
             // 
-            this.l_bilan.Location = new System.Drawing.Point(550, 316);
+            this.l_bilan.Location = new System.Drawing.Point(556, 318);
             this.l_bilan.Name = "l_bilan";
             this.l_bilan.Size = new System.Drawing.Size(206, 78);
             this.l_bilan.TabIndex = 15;
@@ -189,7 +189,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(193, 397);
+            this.dataGridView1.Location = new System.Drawing.Point(199, 399);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(384, 121);
             this.dataGridView1.TabIndex = 16;
@@ -205,7 +205,7 @@
             this.c_visiteur.FormattingEnabled = true;
             this.c_visiteur.Items.AddRange(new object[] {
             "Tous les visiteurs"});
-            this.c_visiteur.Location = new System.Drawing.Point(154, 62);
+            this.c_visiteur.Location = new System.Drawing.Point(160, 64);
             this.c_visiteur.Name = "c_visiteur";
             this.c_visiteur.Size = new System.Drawing.Size(150, 21);
             this.c_visiteur.TabIndex = 1;
@@ -213,7 +213,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(673, 495);
+            this.button1.Location = new System.Drawing.Point(687, 479);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
@@ -224,7 +224,7 @@
             // b_supprimer
             // 
             this.b_supprimer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.b_supprimer.Location = new System.Drawing.Point(328, 368);
+            this.b_supprimer.Location = new System.Drawing.Point(334, 370);
             this.b_supprimer.Name = "b_supprimer";
             this.b_supprimer.Size = new System.Drawing.Size(123, 23);
             this.b_supprimer.TabIndex = 33;
@@ -235,7 +235,7 @@
             // check_entre2Dates
             // 
             this.check_entre2Dates.AutoSize = true;
-            this.check_entre2Dates.Location = new System.Drawing.Point(231, 99);
+            this.check_entre2Dates.Location = new System.Drawing.Point(237, 101);
             this.check_entre2Dates.Name = "check_entre2Dates";
             this.check_entre2Dates.Size = new System.Drawing.Size(150, 17);
             this.check_entre2Dates.TabIndex = 34;
@@ -245,7 +245,7 @@
             // 
             // date_debutDate
             // 
-            this.date_debutDate.Location = new System.Drawing.Point(12, 138);
+            this.date_debutDate.Location = new System.Drawing.Point(18, 140);
             this.date_debutDate.Name = "date_debutDate";
             this.date_debutDate.Size = new System.Drawing.Size(200, 20);
             this.date_debutDate.TabIndex = 35;
@@ -253,7 +253,7 @@
             // 
             // date_finDate
             // 
-            this.date_finDate.Location = new System.Drawing.Point(270, 138);
+            this.date_finDate.Location = new System.Drawing.Point(276, 140);
             this.date_finDate.Name = "date_finDate";
             this.date_finDate.Size = new System.Drawing.Size(200, 20);
             this.date_finDate.TabIndex = 36;

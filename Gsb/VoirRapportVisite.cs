@@ -317,54 +317,51 @@ namespace Gsb
             this.Hide();
         }
 
-        private void b_supprimer_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void b_supprimer_Click_1(object sender, EventArgs e)
         {
             try
             {
-               
-                DialogResult result1 = MessageBox.Show("Etes vous sur de vouloir supprimer ce rapport ? ", "Suppresion d'un rapport", MessageBoxButtons.YesNo);
-                if (result1 == DialogResult.Yes)
+                if (c_numRapport.Text != "")
                 {
-                    connection.Open();
-                    MySqlCommand SelectCommand2 = new MySqlCommand("delete from rapport_visite where col_matricule=" + "'" + col_matricule + "'" + "AND rap_num=" + "'" + c_numRapport.Text + "'" + ";", connection);
-
-                    MySqlDataReader myReader2;
-
-                    myReader2 = SelectCommand2.ExecuteReader();
-
-                    connection.Close();
-
-                    MessageBox.Show("La suppresion a réussi !");
-
-                    l_bilan.Text = " ";
-                    l_motif.Text = " ";
-                    c_numRapport.Items.Clear();
-                    c_numRapport.Text = "";
-                    l_date.Text = "";
-                    l_nomPrenomPraticien.Text = "";
-                    if (this.dataGridView1.DataSource != null)
+                    DialogResult result1 = MessageBox.Show("Etes vous sur de vouloir supprimer ce rapport ? ", "Suppresion d'un rapport", MessageBoxButtons.YesNo);
+                    if (result1 == DialogResult.Yes)
                     {
-                        this.dataGridView1.DataSource = null;
-                    }
-                    else
-                    {
-                        this.dataGridView1.Rows.Clear();
+                        connection.Open();
+                        MySqlCommand SelectCommand2 = new MySqlCommand("delete from rapport_visite where col_matricule=" + "'" + col_matricule + "'" + "AND rap_num=" + "'" + c_numRapport.Text + "'" + ";", connection);
+
+                        MySqlDataReader myReader2;
+
+                        myReader2 = SelectCommand2.ExecuteReader();
+
+                        connection.Close();
+
+                        MessageBox.Show("La suppresion a réussi !");
+
+                        l_bilan.Text = " ";
+                        l_motif.Text = " ";
+                        c_numRapport.Items.Clear();
+                        c_numRapport.Text = "";
+                        l_date.Text = "";
+                        l_nomPrenomPraticien.Text = "";
+                        if (this.dataGridView1.DataSource != null)
+                        {
+                            this.dataGridView1.DataSource = null;
+                        }
+                        else
+                        {
+                            this.dataGridView1.Rows.Clear();
+                        }
                     }
                 }
                 else
                 {
-                   
+                   MessageBox.Show("Pas de numéro de rapport choisi");
                 }
-                
 
 
 
-            }
+
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
