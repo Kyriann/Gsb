@@ -137,10 +137,19 @@ namespace Gsb
             connection.Close();
 
             connection.Open();
-            MySqlDataAdapter MyDA = new MySqlDataAdapter("SELECT MED_DEPOTLEGAL AS Medicaments,OFF_QTE AS Quantite from offrir INNER JOIN rapport_visite on offrir.VIS_MATRICULE=rapport_visite.COL_MATRICULE where col_matricule=" + "'" + l_numVisiteur.Text + "'" + "; ", connection);
-            DataSet DS = new DataSet();
-            MyDA.Fill(DS);
-            dataGridView1.DataSource = DS.Tables[0];
+            MySqlDataAdapter MyDA3 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,QUANTITE AS Quantite from distribuer INNER JOIN echantillon on distribuer.ECH_ID=echantillon.ECH_ID where col_matricule=" + "'" + l_numVisiteur.Text + "'" + "AND OFFERT=1" + ";", connection);
+            DataSet DS3 = new DataSet();
+            MyDA3.Fill(DS3);
+            data_offert.DataSource = DS3.Tables[0];
+
+
+            connection.Close();
+
+            connection.Open();
+            MySqlDataAdapter MyDA4 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,QUANTITE AS Quantite from distribuer INNER JOIN echantillon on distribuer.ECH_ID = echantillon.ECH_ID where col_matricule = " + "'" + l_numVisiteur.Text + "'" + "AND PRESENTE=1" + ";", connection);
+            DataSet DS4 = new DataSet();
+            MyDA4.Fill(DS4);
+            data_presente.DataSource = DS4.Tables[0];
 
 
             connection.Close();
@@ -203,13 +212,21 @@ namespace Gsb
                 l_date.Text = "";
                 l_nomPrenomPraticien.Text = "";
 
-                if (this.dataGridView1.DataSource != null)
+                if (this.data_offert.DataSource != null)
                 {
-                    this.dataGridView1.DataSource = null;
+                    this.data_offert.DataSource = null;
                 }
                 else
                 {
-                    this.dataGridView1.Rows.Clear();
+                    this.data_offert.Rows.Clear();
+                }
+                if (this.data_presente.DataSource != null)
+                {
+                    this.data_presente.DataSource = null;
+                }
+                else
+                {
+                    this.data_presente.Rows.Clear();
                 }
 
             }
@@ -229,13 +246,21 @@ namespace Gsb
                 l_date.Text = "";
                 l_nomPrenomPraticien.Text = "";
 
-                if (this.dataGridView1.DataSource != null)
+                if (this.data_offert.DataSource != null)
                 {
-                    this.dataGridView1.DataSource = null;
+                    this.data_offert.DataSource = null;
                 }
                 else
                 {
-                    this.dataGridView1.Rows.Clear();
+                    this.data_offert.Rows.Clear();
+                }
+                if (this.data_presente.DataSource != null)
+                {
+                    this.data_presente.DataSource = null;
+                }
+                else
+                {
+                    this.data_presente.Rows.Clear();
                 }
 
 
@@ -376,13 +401,21 @@ namespace Gsb
                         c_numRapport.Text = "";
                         l_date.Text = "";
                         l_nomPrenomPraticien.Text = "";
-                        if (this.dataGridView1.DataSource != null)
+                        if (this.data_offert.DataSource != null)
                         {
-                            this.dataGridView1.DataSource = null;
+                            this.data_offert.DataSource = null;
                         }
                         else
                         {
-                            this.dataGridView1.Rows.Clear();
+                            this.data_offert.Rows.Clear();
+                        }
+                        if (this.data_presente.DataSource != null)
+                        {
+                            this.data_presente.DataSource = null;
+                        }
+                        else
+                        {
+                            this.data_presente.Rows.Clear();
                         }
                     }
                 
@@ -400,6 +433,26 @@ namespace Gsb
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void data_offert_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_presente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

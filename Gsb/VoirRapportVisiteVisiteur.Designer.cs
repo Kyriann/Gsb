@@ -36,7 +36,6 @@
             this.c_numRapport = new System.Windows.Forms.ComboBox();
             this.praticienVisite = new System.Windows.Forms.Label();
             this.motif = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.date = new System.Windows.Forms.Label();
             this.b_details = new System.Windows.Forms.Button();
             this.bilan = new System.Windows.Forms.Label();
@@ -53,8 +52,13 @@
             this.date_debutDate = new System.Windows.Forms.DateTimePicker();
             this.date_finDate = new System.Windows.Forms.DateTimePicker();
             this.b_supprimer = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.data_offert = new System.Windows.Forms.DataGridView();
+            this.data_presente = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_offert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_presente)).BeginInit();
             this.SuspendLayout();
             // 
             // e_detailsPraticien
@@ -106,14 +110,6 @@
             this.motif.Size = new System.Drawing.Size(36, 13);
             this.motif.TabIndex = 9;
             this.motif.Text = "Motif :";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(193, 397);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(384, 121);
-            this.dataGridView1.TabIndex = 17;
             // 
             // date
             // 
@@ -245,7 +241,7 @@
             // b_supprimer
             // 
             this.b_supprimer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.b_supprimer.Location = new System.Drawing.Point(325, 368);
+            this.b_supprimer.Location = new System.Drawing.Point(458, 370);
             this.b_supprimer.Name = "b_supprimer";
             this.b_supprimer.Size = new System.Drawing.Size(123, 23);
             this.b_supprimer.TabIndex = 34;
@@ -253,9 +249,51 @@
             this.b_supprimer.UseVisualStyleBackColor = true;
             this.b_supprimer.Click += new System.EventHandler(this.b_supprimer_Click_1);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(288, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 13);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Médicaments presentées";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 374);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Médicaments offert";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // data_offert
+            // 
+            this.data_offert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_offert.Location = new System.Drawing.Point(27, 398);
+            this.data_offert.Name = "data_offert";
+            this.data_offert.Size = new System.Drawing.Size(238, 121);
+            this.data_offert.TabIndex = 41;
+            this.data_offert.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_offert_CellContentClick);
+            // 
+            // data_presente
+            // 
+            this.data_presente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_presente.Location = new System.Drawing.Point(291, 398);
+            this.data_presente.Name = "data_presente";
+            this.data_presente.Size = new System.Drawing.Size(313, 121);
+            this.data_presente.TabIndex = 40;
+            this.data_presente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_presente_CellContentClick);
+            // 
             // VoirRapportVisiteVisiteur
             // 
             this.ClientSize = new System.Drawing.Size(768, 522);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.data_offert);
+            this.Controls.Add(this.data_presente);
             this.Controls.Add(this.b_supprimer);
             this.Controls.Add(this.date_finDate);
             this.Controls.Add(this.date_debutDate);
@@ -272,7 +310,6 @@
             this.Controls.Add(this.bilan);
             this.Controls.Add(this.b_details);
             this.Controls.Add(this.date);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.motif);
             this.Controls.Add(this.praticienVisite);
             this.Controls.Add(this.c_numRapport);
@@ -284,7 +321,8 @@
             this.Text = "Rapport de visite";
             this.Load += new System.EventHandler(this.VoirRapportVisiteVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_offert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_presente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,12 +345,15 @@
         private System.Windows.Forms.Label bilan;
         private System.Windows.Forms.Button b_details;
         private System.Windows.Forms.Label date;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label motif;
         private System.Windows.Forms.Label praticienVisite;
         private System.Windows.Forms.ComboBox c_numRapport;
         private System.Windows.Forms.Label numerorapport;
         private System.Windows.Forms.Label visiteur;
         private System.Windows.Forms.Button b_supprimer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView data_offert;
+        private System.Windows.Forms.DataGridView data_presente;
     }
 }
