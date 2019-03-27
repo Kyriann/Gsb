@@ -45,7 +45,7 @@
             this.l_date = new System.Windows.Forms.Label();
             this.bilan = new System.Windows.Forms.Label();
             this.l_bilan = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.data_presente = new System.Windows.Forms.DataGridView();
             this.e_detailsPraticien = new System.Windows.Forms.ErrorProvider(this.components);
             this.c_visiteur = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,10 +53,12 @@
             this.check_entre2Dates = new System.Windows.Forms.CheckBox();
             this.date_debutDate = new System.Windows.Forms.DateTimePicker();
             this.date_finDate = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.data_offert = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.data_presente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_offert)).BeginInit();
             this.SuspendLayout();
             // 
             // b_details
@@ -189,14 +191,14 @@
             this.l_bilan.Size = new System.Drawing.Size(206, 78);
             this.l_bilan.TabIndex = 15;
             // 
-            // dataGridView1
+            // data_presente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(237, 399);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(313, 121);
-            this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.data_presente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_presente.Location = new System.Drawing.Point(276, 399);
+            this.data_presente.Name = "data_presente";
+            this.data_presente.Size = new System.Drawing.Size(313, 121);
+            this.data_presente.TabIndex = 16;
+            this.data_presente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // e_detailsPraticien
             // 
@@ -227,7 +229,7 @@
             // b_supprimer
             // 
             this.b_supprimer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.b_supprimer.Location = new System.Drawing.Point(334, 370);
+            this.b_supprimer.Location = new System.Drawing.Point(427, 370);
             this.b_supprimer.Name = "b_supprimer";
             this.b_supprimer.Size = new System.Drawing.Size(123, 23);
             this.b_supprimer.TabIndex = 33;
@@ -262,26 +264,47 @@
             this.date_finDate.TabIndex = 36;
             this.date_finDate.ValueChanged += new System.EventHandler(this.date_finDate_ValueChanged);
             // 
-            // dataGridView2
+            // data_offert
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 399);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(191, 121);
-            this.dataGridView2.TabIndex = 37;
+            this.data_offert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_offert.Location = new System.Drawing.Point(12, 399);
+            this.data_offert.Name = "data_offert";
+            this.data_offert.Size = new System.Drawing.Size(238, 121);
+            this.data_offert.TabIndex = 37;
+            this.data_offert.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 375);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Médicaments offert";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(273, 375);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 13);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Médicaments presentées";
             // 
             // VoirRapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 522);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.data_offert);
             this.Controls.Add(this.date_finDate);
             this.Controls.Add(this.date_debutDate);
             this.Controls.Add(this.check_entre2Dates);
             this.Controls.Add(this.b_supprimer);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.data_presente);
             this.Controls.Add(this.l_bilan);
             this.Controls.Add(this.bilan);
             this.Controls.Add(this.l_date);
@@ -303,9 +326,9 @@
             this.Name = "VoirRapportVisite";
             this.Text = "Rapport de visite";
             this.Load += new System.EventHandler(this.VoirRapportVisite_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_presente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_offert)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +351,7 @@
         private System.Windows.Forms.Label l_date;
         private System.Windows.Forms.Label bilan;
         private System.Windows.Forms.Label l_bilan;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView data_presente;
         private System.Windows.Forms.ErrorProvider e_detailsPraticien;
         private System.Windows.Forms.ComboBox c_visiteur;
         private System.Windows.Forms.Button button1;
@@ -336,6 +359,8 @@
         private System.Windows.Forms.DateTimePicker date_finDate;
         private System.Windows.Forms.DateTimePicker date_debutDate;
         private System.Windows.Forms.CheckBox check_entre2Dates;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView data_offert;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -52,13 +52,21 @@ namespace Gsb
             l_date.Text = "";
             l_nomPrenomPraticien.Text = "";
             l_bilan.Text = "";
-            if (this.dataGridView1.DataSource != null)
+            if (this.data_presente.DataSource != null)
             {
-                this.dataGridView1.DataSource = null;
+                this.data_presente.DataSource = null;
             }
             else
             {
-                this.dataGridView1.Rows.Clear();
+                this.data_presente.Rows.Clear();
+            }
+            if (this.data_offert.DataSource != null)
+            {
+                this.data_offert.DataSource = null;
+            }
+            else
+            {
+                this.data_offert.Rows.Clear();
             }
 
 
@@ -220,16 +228,26 @@ namespace Gsb
                 connection.Close();
 
                 connection.Open();
-                MySqlDataAdapter MyDA = new MySqlDataAdapter("SELECT MED_DEPOTLEGAL AS Medicaments,OFF_QTE AS Quantite from offrir INNER JOIN rapport_visite on offrir.VIS_MATRICULE=rapport_visite.COL_MATRICULE where col_matricule=" + "'" + l_numVisiteur.Text + "'" + "; ", connection);
+                MySqlDataAdapter MyDA = new MySqlDataAdapter("SELECT MED_ID AS Medicaments from distribuer INNER JOIN echantillon on distribuer.ECH_ID=echantillon.ECH_ID where col_matricule=" + "'" + l_numVisiteur.Text + "'" + "AND OFFERT='1' "+";", connection);
                 DataSet DS = new DataSet();
                 MyDA.Fill(DS);
-                dataGridView1.DataSource = DS.Tables[0];
+                data_offert.DataSource = DS.Tables[0];
+
+
+                connection.Close();
+
+                connection.Open();
+                MySqlDataAdapter MyDA2 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,QUANTITE AS Quantite from distribuer INNER JOIN echantillon on distribuer.ECH_ID = echantillon.ECH_ID where col_matricule = " + "'" + l_numVisiteur.Text + "'" + "AND PRESENTE='1' "+";", connection);
+                DataSet DS2 = new DataSet();
+                MyDA2.Fill(DS2);
+                data_presente.DataSource = DS2.Tables[0];
 
 
                 connection.Close();
             }
             else
             {
+                
                 connection.Open();
                 MySqlCommand SelectCommand3 = new MySqlCommand("select col_matricule from collaborateur where col_nom="+"'"+laCase[0]+"'"+" AND col_prenom="+"'"+laCase[1]+"'"+";", connection);
                 MySqlDataReader myReader3;
@@ -269,19 +287,19 @@ namespace Gsb
                 connection.Close();
 
                 connection.Open();
-                MySqlDataAdapter MyDA = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,OFF_QTE AS Quantite distribuer INNER JOIN echantillon on distribuer.ECH_ID=echantillon.ECH_ID where col_matricule=" + "'" + col_matricule + "'" + "AND OFFERT='1';", connection);
-                DataSet DS = new DataSet();
-                MyDA.Fill(DS);
-                dataGridView1.DataSource = DS.Tables[0];
+                MySqlDataAdapter MyDA3 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,QUANTITE AS Quantite from distribuer INNER JOIN echantillon on distribuer.ECH_ID=echantillon.ECH_ID where col_matricule=" + "'" + col_matricule + "'" + "AND OFFERT=1" + ";", connection);
+                DataSet DS3 = new DataSet();
+                MyDA3.Fill(DS3);
+                data_offert.DataSource = DS3.Tables[0];
 
 
                 connection.Close();
 
                 connection.Open();
-                MySqlDataAdapter MyDA2 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments, OFF_QTE AS Quantite distribuer INNER JOIN echantillon on distribuer.ECH_ID = echantillon.ECH_ID where col_matricule = " + "'" + col_matricule + "'" + "AND PRESENTE = '1'; ", connection);
-                DataSet DS2 = new DataSet();
-                MyDA.Fill(DS);
-                dataGridView2.DataSource = DS.Tables[0];
+                MySqlDataAdapter MyDA4 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,QUANTITE AS Quantite from distribuer INNER JOIN echantillon on distribuer.ECH_ID = echantillon.ECH_ID where col_matricule = " + "'" + col_matricule + "'" + "AND PRESENTE=1" + ";", connection);
+                DataSet DS4 = new DataSet();
+                MyDA4.Fill(DS4);
+                data_presente.DataSource = DS4.Tables[0];
 
 
                 connection.Close();
@@ -352,13 +370,21 @@ namespace Gsb
                         c_numRapport.Text = "";
                         l_date.Text = "";
                         l_nomPrenomPraticien.Text = "";
-                        if (this.dataGridView1.DataSource != null)
+                        if (this.data_presente.DataSource != null)
                         {
-                            this.dataGridView1.DataSource = null;
+                            this.data_presente.DataSource = null;
                         }
                         else
                         {
-                            this.dataGridView1.Rows.Clear();
+                            this.data_presente.Rows.Clear();
+                        }
+                        if (this.data_offert.DataSource != null)
+                        {
+                            this.data_offert.DataSource = null;
+                        }
+                        else
+                        {
+                            this.data_offert.Rows.Clear();
                         }
                     }
                 }
@@ -395,13 +421,21 @@ namespace Gsb
                 l_date.Text = "";
                 l_nomPrenomPraticien.Text = "";
 
-                if (this.dataGridView1.DataSource != null)
+                if (this.data_presente.DataSource != null)
                 {
-                    this.dataGridView1.DataSource = null;
+                    this.data_presente.DataSource = null;
                 }
                 else
                 {
-                    this.dataGridView1.Rows.Clear();
+                    this.data_presente.Rows.Clear();
+                }
+                if (this.data_offert.DataSource != null)
+                {
+                    this.data_offert.DataSource = null;
+                }
+                else
+                {
+                    this.data_offert.Rows.Clear();
                 }
 
             }
@@ -431,16 +465,24 @@ namespace Gsb
                 l_date.Text = "";
                 l_nomPrenomPraticien.Text = "";
 
-                if (this.dataGridView1.DataSource != null)
+                if (this.data_presente.DataSource != null)
                 {
-                   this.dataGridView1.DataSource = null;
+                   this.data_presente.DataSource = null;
                 }
                 else
                 {
-                   this.dataGridView1.Rows.Clear();
+                   this.data_presente.Rows.Clear();
                 }
-                
-                
+                if (this.data_offert.DataSource != null)
+                {
+                    this.data_offert.DataSource = null;
+                }
+                else
+                {
+                    this.data_offert.Rows.Clear();
+                }
+
+
             }
             else
             {
@@ -458,13 +500,21 @@ namespace Gsb
                 l_date.Text = "";
                 l_nomPrenomPraticien.Text = "";
 
-                if (this.dataGridView1.DataSource != null)
+                if (this.data_presente.DataSource != null)
                 {
-                    this.dataGridView1.DataSource = null;
+                    this.data_presente.DataSource = null;
                 }
                 else
                 {
-                    this.dataGridView1.Rows.Clear();
+                    this.data_presente.Rows.Clear();
+                }
+                if (this.data_offert.DataSource != null)
+                {
+                    this.data_offert.DataSource = null;
+                }
+                else
+                {
+                    this.data_offert.Rows.Clear();
                 }
 
 
@@ -649,6 +699,11 @@ namespace Gsb
                 }
             }
             
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
