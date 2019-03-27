@@ -53,8 +53,10 @@
             this.check_entre2Dates = new System.Windows.Forms.CheckBox();
             this.date_debutDate = new System.Windows.Forms.DateTimePicker();
             this.date_finDate = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // b_details
@@ -190,9 +192,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(199, 399);
+            this.dataGridView1.Location = new System.Drawing.Point(237, 399);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(384, 121);
+            this.dataGridView1.Size = new System.Drawing.Size(313, 121);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -260,11 +262,20 @@
             this.date_finDate.TabIndex = 36;
             this.date_finDate.ValueChanged += new System.EventHandler(this.date_finDate_ValueChanged);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 399);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(191, 121);
+            this.dataGridView2.TabIndex = 37;
+            // 
             // VoirRapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 522);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.date_finDate);
             this.Controls.Add(this.date_debutDate);
             this.Controls.Add(this.check_entre2Dates);
@@ -294,6 +305,7 @@
             this.Load += new System.EventHandler(this.VoirRapportVisite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +336,6 @@
         private System.Windows.Forms.DateTimePicker date_finDate;
         private System.Windows.Forms.DateTimePicker date_debutDate;
         private System.Windows.Forms.CheckBox check_entre2Dates;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

@@ -269,10 +269,19 @@ namespace Gsb
                 connection.Close();
 
                 connection.Open();
-                MySqlDataAdapter MyDA = new MySqlDataAdapter("SELECT MED_DEPOTLEGAL AS Medicaments,OFF_QTE AS Quantite from offrir INNER JOIN rapport_visite on offrir.VIS_MATRICULE=rapport_visite.COL_MATRICULE where col_matricule=" + "'" + col_matricule + "'" + "; ", connection);
+                MySqlDataAdapter MyDA = new MySqlDataAdapter("SELECT MED_ID AS Medicaments,OFF_QTE AS Quantite distribuer INNER JOIN echantillon on distribuer.ECH_ID=echantillon.ECH_ID where col_matricule=" + "'" + col_matricule + "'" + "AND OFFERT='1';", connection);
                 DataSet DS = new DataSet();
                 MyDA.Fill(DS);
                 dataGridView1.DataSource = DS.Tables[0];
+
+
+                connection.Close();
+
+                connection.Open();
+                MySqlDataAdapter MyDA2 = new MySqlDataAdapter("SELECT MED_ID AS Medicaments, OFF_QTE AS Quantite distribuer INNER JOIN echantillon on distribuer.ECH_ID = echantillon.ECH_ID where col_matricule = " + "'" + col_matricule + "'" + "AND PRESENTE = '1'; ", connection);
+                DataSet DS2 = new DataSet();
+                MyDA.Fill(DS);
+                dataGridView2.DataSource = DS.Tables[0];
 
 
                 connection.Close();
@@ -285,7 +294,7 @@ namespace Gsb
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -17,7 +17,7 @@ namespace Gsb
         private string natuser;
 
 
-        
+
 
         public Selection(string log, string mdp, string natUser)
         {
@@ -28,12 +28,12 @@ namespace Gsb
             natuser = natUser;
         }
 
-        
+
 
         private void créerUnRapportToolStripMenuItem_Click(object sender, EventArgs e)
-        {           
+        {
             this.Hide();
-            RapportVisite nouveauRapport = new RapportVisite(login, motDepasse,natuser);
+            RapportVisite nouveauRapport = new RapportVisite(login, motDepasse, natuser);
             nouveauRapport.ShowDialog();
             this.Close();
         }
@@ -52,40 +52,35 @@ namespace Gsb
                 voirRapportV.ShowDialog();
                 this.Close();
             }
-            else if (natuser == "responsable" || natuser=="admin") 
+            else if (natuser == "responsable" || natuser == "admin")
             {
                 this.Hide();
-                VoirRapportVisite voirRapport = new VoirRapportVisite(login,natuser);
+                VoirRapportVisite voirRapport = new VoirRapportVisite(login, natuser);
                 voirRapport.ShowDialog();
                 this.Close();
             }
 
-            
+
         }
 
         private void Selection_Load(object sender, EventArgs e)
         {
-            
-            
-            
+
+
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void b_quit_Click(object sender, EventArgs e)
+        private void b_quit_Click_1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Etes vous sur de vouloir quitter ?", "Rapport de visite GSB", MessageBoxButtons.OKCancel);
             if (dialogResult == DialogResult.OK)
             {
-                Environment.Exit(0);
+                Environment.Exit(1);
             }
             else if (dialogResult == DialogResult.Cancel)
             {
                 //do something else
             }
         }
-
     }
 }
