@@ -61,38 +61,52 @@ namespace Gsb
         }
 
         private void b_createPra_Click(object sender, EventArgs e)
-        {
-            
-
-            if(t_nomPra.Text != string.Empty && t_prenomPra.Text != string.Empty && t_adressePra.Text != string.Empty && t_cpPra.Text != string.Empty && t_villePra.Text != string.Empty && c_typePra.Text != string.Empty && t_notoriétéPra.Text != string.Empty)
+        {            
+            if (double.TryParse(t_notoriétéPra.Text, out notorietePra))
             {
-                nomPra = t_nomPra.Text;
-                prenomPra = t_prenomPra.Text;
-                adressePra = t_adressePra.Text;
-                cpPra = t_cpPra.Text;
-                villePra = t_villePra.Text;
-                //typePra = c_typePra.Text;
-                notorietePra = Convert.ToDouble(t_notoriétéPra.Text.Trim());
-
-
-                
-                string insertPra = "INSERT INTO praticien(PRA_NOM, PRA_PRENOM, PRA_ADRESSE, PRA_CP, PRA_VILLE, PRA_COEFNOTORIETE, TYP_CODE) VALUES(" + "'" + nomPra + "'" + ", " + "'" + prenomPra + "'" + ", " + "'" + adressePra + "'" + "," + "'" + cpPra + "'" + "," + "'" + villePra + "'" + "," + notorietePra + "," + "'" + typePra + "'" + ")";
-
-                CURS css = new CURS(chaineConnexion);
-                css.ReqAdmin(insertPra);
-
-                css.fermer();
-                
-
-                MessageBox.Show("Le praticien a bien été ajouté.");
-                this.Close();
+                // c’est ok txtBox.Text est un int et on peut utiliser test ici
+                MessageBox.Show("notoriete est a" + notorietePra);
             }
-            else
+            try
             {
-                MessageBox.Show("Veuillez renseignez toutes les informations.");
+
+
+                if (t_nomPra.Text != string.Empty && t_prenomPra.Text != string.Empty && t_adressePra.Text != string.Empty && t_cpPra.Text != string.Empty && t_villePra.Text != string.Empty && c_typePra.Text != string.Empty && t_notoriétéPra.Text != string.Empty)
+                {
+                    nomPra = t_nomPra.Text;
+                    prenomPra = t_prenomPra.Text;
+                    adressePra = t_adressePra.Text;
+                    cpPra = t_cpPra.Text;
+                    villePra = t_villePra.Text;
+                    //typePra = c_typePra.Text;
+
+                    notorietePra = Convert.ToDouble(t_notoriétéPra.Text.Trim());
+
+
+                    string insertPra = "INSERT INTO praticien(PRA_NOM, PRA_PRENOM, PRA_ADRESSE, PRA_CP, PRA_VILLE, PRA_COEFNOTORIETE, TYP_CODE) VALUES(" + "'" + nomPra + "'" + ", " + "'" + prenomPra + "'" + ", " + "'" + adressePra + "'" + "," + "'" + cpPra + "'" + "," + "'" + villePra + "'" + "," + notorietePra + "," + "'" + typePra + "'" + ")";
+
+                    CURS css = new CURS(chaineConnexion);
+                    css.ReqAdmin(insertPra);
+
+                    css.fermer();
+
+
+                    MessageBox.Show("Le praticien a bien été ajouté.");
+                    this.Close();
+                }
+                else
+                {
+                    errorCreate.SetError(b_createPra, "Veuillez renseignez toutes les informations.");
+                    //MessageBox.Show("Veuillez renseignez toutes les informations.");
+                }
+            }
+            catch
+            {
+                errorCreate.SetError(b_createPra, "La notoriété ne doit être composé que de chiffres.");
+                //MessageBox.Show("La notoriété ne doit être composé que de chiffres.");
             }
 
-            
+
         }
 
         private void c_typePra_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,7 +139,7 @@ namespace Gsb
             //t_test.Text = typePra;
         }
 
-        private void AjouterPraticien_Load(object sender, EventArgs e)
+        private void t_notoriétéPra_TextChanged(object sender, EventArgs e)
         {
 
         }

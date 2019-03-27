@@ -70,7 +70,7 @@
     <Compile Include="RapportVisite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RapportVisite.Designer.cs">
+    <Compile Include="RapportVisite.designer.cs">
       <DependentUpon>RapportVisite.cs</DependentUpon>
     </Compile>
     <Compile Include="Selection.cs">

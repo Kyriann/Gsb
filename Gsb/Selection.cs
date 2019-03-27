@@ -33,7 +33,7 @@ namespace Gsb
         private void créerUnRapportToolStripMenuItem_Click(object sender, EventArgs e)
         {           
             this.Hide();
-            RapportVisite nouveauRapport = new RapportVisite(/*login, motDepasse*/);
+            RapportVisite nouveauRapport = new RapportVisite(login, motDepasse,natuser);
             nouveauRapport.ShowDialog();
             this.Close();
         }

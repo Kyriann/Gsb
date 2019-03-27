@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AjouterPraticien));
             this.t_nomPra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,122 +47,112 @@
             this.b_createPra = new System.Windows.Forms.Button();
             this.b_resetPra = new System.Windows.Forms.Button();
             this.b_cancelPra = new System.Windows.Forms.Button();
-            this.t_test = new System.Windows.Forms.Label();
+            this.errorCreate = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorCreate)).BeginInit();
             this.SuspendLayout();
             // 
             // t_nomPra
             // 
-            this.t_nomPra.Location = new System.Drawing.Point(91, 30);
-            this.t_nomPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_nomPra.Location = new System.Drawing.Point(121, 37);
             this.t_nomPra.Name = "t_nomPra";
-            this.t_nomPra.Size = new System.Drawing.Size(112, 20);
+            this.t_nomPra.Size = new System.Drawing.Size(148, 22);
             this.t_nomPra.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(31, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(37, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nom";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(317, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Prenom";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 102);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(31, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Adresse";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 169);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(31, 208);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(84, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Code Postal";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(238, 169);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(317, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(34, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Ville";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 233);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(31, 287);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Type";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 288);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(31, 354);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 7;
             this.label7.Text = "Notoriété";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // t_prenomPra
             // 
-            this.t_prenomPra.Location = new System.Drawing.Point(303, 30);
-            this.t_prenomPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_prenomPra.Location = new System.Drawing.Point(404, 37);
             this.t_prenomPra.Name = "t_prenomPra";
-            this.t_prenomPra.Size = new System.Drawing.Size(100, 20);
+            this.t_prenomPra.Size = new System.Drawing.Size(132, 22);
             this.t_prenomPra.TabIndex = 8;
             // 
             // t_adressePra
             // 
-            this.t_adressePra.Location = new System.Drawing.Point(91, 99);
-            this.t_adressePra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_adressePra.Location = new System.Drawing.Point(121, 122);
             this.t_adressePra.Name = "t_adressePra";
-            this.t_adressePra.Size = new System.Drawing.Size(312, 20);
+            this.t_adressePra.Size = new System.Drawing.Size(415, 22);
             this.t_adressePra.TabIndex = 9;
             // 
             // t_cpPra
             // 
-            this.t_cpPra.Location = new System.Drawing.Point(91, 167);
-            this.t_cpPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_cpPra.Location = new System.Drawing.Point(121, 205);
             this.t_cpPra.Name = "t_cpPra";
-            this.t_cpPra.Size = new System.Drawing.Size(73, 20);
+            this.t_cpPra.Size = new System.Drawing.Size(96, 22);
             this.t_cpPra.TabIndex = 10;
             // 
             // t_villePra
             // 
-            this.t_villePra.Location = new System.Drawing.Point(303, 167);
-            this.t_villePra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_villePra.Location = new System.Drawing.Point(404, 205);
             this.t_villePra.Name = "t_villePra";
-            this.t_villePra.Size = new System.Drawing.Size(100, 20);
+            this.t_villePra.Size = new System.Drawing.Size(132, 22);
             this.t_villePra.TabIndex = 11;
             // 
             // c_typePra
             // 
+            this.c_typePra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.c_typePra.FormattingEnabled = true;
             this.c_typePra.Items.AddRange(new object[] {
             "Médecin Hospitalier",
@@ -168,38 +160,35 @@
             "Pharmacien Hospitalier",
             "Pharmacien Officine",
             "Personnel de santé"});
-            this.c_typePra.Location = new System.Drawing.Point(91, 230);
-            this.c_typePra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.c_typePra.Location = new System.Drawing.Point(121, 283);
             this.c_typePra.Name = "c_typePra";
-            this.c_typePra.Size = new System.Drawing.Size(136, 21);
+            this.c_typePra.Size = new System.Drawing.Size(180, 24);
             this.c_typePra.TabIndex = 12;
             this.c_typePra.SelectedIndexChanged += new System.EventHandler(this.c_typePra_SelectedIndexChanged);
             // 
             // t_notoriétéPra
             // 
-            this.t_notoriétéPra.Location = new System.Drawing.Point(91, 285);
-            this.t_notoriétéPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.t_notoriétéPra.Location = new System.Drawing.Point(121, 351);
             this.t_notoriétéPra.Name = "t_notoriétéPra";
-            this.t_notoriétéPra.Size = new System.Drawing.Size(73, 20);
+            this.t_notoriétéPra.Size = new System.Drawing.Size(96, 22);
             this.t_notoriétéPra.TabIndex = 13;
+            this.t_notoriétéPra.TextChanged += new System.EventHandler(this.t_notoriétéPra_TextChanged);
             // 
             // b_createPra
             // 
-            this.b_createPra.Location = new System.Drawing.Point(187, 360);
-            this.b_createPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.b_createPra.Location = new System.Drawing.Point(249, 443);
             this.b_createPra.Name = "b_createPra";
-            this.b_createPra.Size = new System.Drawing.Size(56, 19);
+            this.b_createPra.Size = new System.Drawing.Size(75, 23);
             this.b_createPra.TabIndex = 14;
-            this.b_createPra.Text = "Valider";
+            this.b_createPra.Text = "Ajouter";
             this.b_createPra.UseVisualStyleBackColor = true;
             this.b_createPra.Click += new System.EventHandler(this.b_createPra_Click);
             // 
             // b_resetPra
             // 
-            this.b_resetPra.Location = new System.Drawing.Point(295, 360);
-            this.b_resetPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.b_resetPra.Location = new System.Drawing.Point(393, 443);
             this.b_resetPra.Name = "b_resetPra";
-            this.b_resetPra.Size = new System.Drawing.Size(56, 19);
+            this.b_resetPra.Size = new System.Drawing.Size(75, 23);
             this.b_resetPra.TabIndex = 15;
             this.b_resetPra.Text = "Reset";
             this.b_resetPra.UseVisualStyleBackColor = true;
@@ -207,31 +196,23 @@
             // 
             // b_cancelPra
             // 
-            this.b_cancelPra.Location = new System.Drawing.Point(390, 349);
-            this.b_cancelPra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.b_cancelPra.Location = new System.Drawing.Point(520, 429);
             this.b_cancelPra.Name = "b_cancelPra";
-            this.b_cancelPra.Size = new System.Drawing.Size(107, 41);
+            this.b_cancelPra.Size = new System.Drawing.Size(143, 51);
             this.b_cancelPra.TabIndex = 16;
             this.b_cancelPra.Text = "Retour a la création du rapport";
             this.b_cancelPra.UseVisualStyleBackColor = true;
             this.b_cancelPra.Click += new System.EventHandler(this.b_cancelPra_Click);
             // 
-            // t_test
+            // errorCreate
             // 
-            this.t_test.AutoSize = true;
-            this.t_test.Location = new System.Drawing.Point(418, 285);
-            this.t_test.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.t_test.Name = "t_test";
-            this.t_test.Size = new System.Drawing.Size(24, 13);
-            this.t_test.TabIndex = 17;
-            this.t_test.Text = "test";
+            this.errorCreate.ContainerControl = this;
             // 
             // AjouterPraticien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 400);
-            this.Controls.Add(this.t_test);
+            this.ClientSize = new System.Drawing.Size(675, 492);
             this.Controls.Add(this.b_cancelPra);
             this.Controls.Add(this.b_resetPra);
             this.Controls.Add(this.b_createPra);
@@ -249,10 +230,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.t_nomPra);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AjouterPraticien";
-            this.Text = "AjouterPraticien";
-            this.Load += new System.EventHandler(this.AjouterPraticien_Load);
+            this.Text = "Ajout d\'un Praticien";
+            ((System.ComponentModel.ISupportInitialize)(this.errorCreate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,6 +258,6 @@
         private System.Windows.Forms.Button b_createPra;
         private System.Windows.Forms.Button b_resetPra;
         private System.Windows.Forms.Button b_cancelPra;
-        private System.Windows.Forms.Label t_test;
+        private System.Windows.Forms.ErrorProvider errorCreate;
     }
 }
