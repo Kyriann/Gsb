@@ -74,5 +74,18 @@ namespace Gsb
         {
             
         }
+        private void b_quit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Etes vous sur de vouloir quitter ?", "Rapport de visite GSB", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                Environment.Exit(0);
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                //do something else
+            }
+        }
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Selection));
             this.menu_selection1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rapportDeVisiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnRapportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,6 +36,7 @@
             this.menu_selection = new System.Windows.Forms.MenuStrip();
             this.label2 = new System.Windows.Forms.Label();
             this.l_showusername = new System.Windows.Forms.Label();
+            this.b_quit = new System.Windows.Forms.Button();
             this.menu_selection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,17 +105,33 @@
             this.l_showusername.UseMnemonic = false;
             this.l_showusername.Click += new System.EventHandler(this.l_showusername_Click);
             // 
+            // b_quit
+            // 
+            this.b_quit.Location = new System.Drawing.Point(513, 331);
+            this.b_quit.Name = "b_quit";
+            this.b_quit.Size = new System.Drawing.Size(75, 23);
+            this.b_quit.TabIndex = 10;
+            this.b_quit.Text = "Quitter";
+            this.b_quit.UseVisualStyleBackColor = true;
+            this.b_quit.Click += new System.EventHandler(this.b_quit_Click);
+            // 
             // Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Gsb.Properties.Resources.logo_gsb;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.b_quit);
             this.Controls.Add(this.l_showusername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menu_selection);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Selection";
-            this.Text = "Selection";
+            this.Text = "Séléction";
             this.Load += new System.EventHandler(this.Selection_Load);
             this.menu_selection.ResumeLayout(false);
             this.menu_selection.PerformLayout();
@@ -130,5 +148,6 @@
         private System.Windows.Forms.MenuStrip menu_selection;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label l_showusername;
+        private System.Windows.Forms.Button b_quit;
     }
 }

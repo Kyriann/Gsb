@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.t_login = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.t_mdp = new System.Windows.Forms.TextBox();
@@ -88,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(228, 35);
+            this.label3.Location = new System.Drawing.Point(228, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 5;
@@ -106,8 +107,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Gsb.Properties.Resources.logo;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackgroundImage = global::Gsb.Properties.Resources.logo_gsb;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(490, 316);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.b_valide);
@@ -115,8 +116,11 @@
             this.Controls.Add(this.t_mdp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.t_login);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Connexion au système de gestion de compte rendus";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.e_login)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_mdp)).EndInit();

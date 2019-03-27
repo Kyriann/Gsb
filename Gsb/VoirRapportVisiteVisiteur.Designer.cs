@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoirRapportVisiteVisiteur));
             this.e_detailsPraticien = new System.Windows.Forms.ErrorProvider(this.components);
             this.visiteur = new System.Windows.Forms.Label();
             this.numerorapport = new System.Windows.Forms.Label();
@@ -251,7 +252,6 @@
             this.b_supprimer.Text = "Supprimer";
             this.b_supprimer.UseVisualStyleBackColor = true;
             this.b_supprimer.Click += new System.EventHandler(this.b_supprimer_Click_1);
-
             // 
             // VoirRapportVisiteVisiteur
             // 
@@ -278,8 +278,10 @@
             this.Controls.Add(this.c_numRapport);
             this.Controls.Add(this.numerorapport);
             this.Controls.Add(this.visiteur);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VoirRapportVisiteVisiteur";
-            this.Text = "VoirRapportVisiteVisiteur";
+            this.Text = "Rapport de visite";
             this.Load += new System.EventHandler(this.VoirRapportVisiteVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.e_detailsPraticien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

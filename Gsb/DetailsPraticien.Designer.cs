@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsPraticien));
             this.t_nom = new System.Windows.Forms.TextBox();
             this.t_prenom = new System.Windows.Forms.TextBox();
             this.t_adresse = new System.Windows.Forms.TextBox();
@@ -224,8 +225,10 @@
             this.Controls.Add(this.t_adresse);
             this.Controls.Add(this.t_prenom);
             this.Controls.Add(this.t_nom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailsPraticien";
-            this.Text = "DetailsPraticien";
+            this.Text = "Détails sur un praticien";
             this.Load += new System.EventHandler(this.DetailsPraticien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.e_adresse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_codePostal)).EndInit();
