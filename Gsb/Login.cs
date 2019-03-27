@@ -14,6 +14,8 @@ namespace Gsb
     public partial class Login : Form 
     {
         private MySqlConnection connection;
+        private string col_matlogin3;
+        private string col_matlogin4;
 
         public Login()
         {
@@ -102,12 +104,20 @@ namespace Gsb
 
                     connection.Close();
 
-                   
+                    connection.Open();
+                    MySqlDataReader myReader4;
+                    MySqlCommand SelectCommand4 = new MySqlCommand("Select COL_NOM,COL_DATEEMBAUCHE from collaborateur where col_matricule='zzz';", connection);
+                    myReader4 = SelectCommand4.ExecuteReader();
+                    while (myReader4.Read())
+                    {
+                        col_matlogin3 = myReader4["COL_NOM"].ToString();
+                        col_matlogin4 = myReader4["COL_DATEEMBAUCHE"].ToString();
+                    }
+
+                    connection.Close();
 
 
-
-
-                    if (t_login.Text == "swiss" && t_mdp.Text == "2003-jun-18")
+                    if (t_login.Text == col_matlogin3 && t_mdp.Text == col_matlogin4)
                     {
                         natUser = "admin";
                         string log, mdp;
